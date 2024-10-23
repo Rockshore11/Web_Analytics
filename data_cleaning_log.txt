@@ -1,0 +1,52 @@
+Data Processing Log
+
+Step 1: Import Libraries
+Imported pandas and numpy libraries for data manipulation and analysis.
+Set warnings to be ignored to keep the output clean.
+
+Step 2: Load Dataset
+Loaded data from the .csv file "Assignment1Data_Sample.csv".
+Displayed the first five rows of the dataset for initial inspection.
+
+Step 3: Data Overview
+Checked the shape of the dataset to understand its dimensions (rows and columns).
+Used info() to get a summary of the dataset, including data types and non-null counts.
+
+Step 4: Data Selection
+Selected specific columns relevant for analysis:
+Object ID, Department, Object Name, Title, Culture, Artist Nationality, Object Begin Date, Object End Date, Medium, Credit Line, Country.
+
+Step 5: Uniqueness Check
+Checked if Object ID is unique by using value_counts().
+Dropped duplicate entries to ensure each Object ID is unique.
+
+Step 6: Data Type Conversion
+Changed data types of categorical columns (Department, Culture, Artist Nationality, Credit Line, Country) to 'category'.
+Converted Object End Date to an integer type.
+
+Step 7: Missing Values Analysis
+Checked for missing values across the dataset.
+For columns with missing values, performed the following:
+Replaced NaN in Department, Object Name, Title, Culture, Artist Nationality, and Country with 'Unknown'.
+Filled missing values in Object End Date with corresponding values from Object Begin Date.
+
+Step 8: Year Conversion
+Defined a function convert_to_bc() to convert negative years to a "BC" format.
+Applied this function to Object Begin Date and Object End Date.
+
+Step 9: Row Dropping
+Dropped rows where both Object Begin Date and Object End Date were missing.
+
+Step 10: Data Consistency Checks
+Checked for consistency in data across all columns to perform further data cleaning if needed.
+
+Step 11: Data Cleaning
+Cleaned the Culture column by removing uncertainty words and extracting primary cultures.
+Standardized values in the Culture column (e.g., changing 'Japan' to 'Japanese').
+Cleaned the Artist Nationality column by removing unnecessary characters and consolidating nationalities.
+Replaced '[no medium available]' in the Medium column with 'Unknown'.
+Cleaned the Country column by removing 'present-day' from values.
+
+Step 12: Final Data Overview & Saving Data in .csv file
+Reviewed the cleaned and processed data, ensuring consistency and readiness for analysis.
+Saved the cleaned data in "Cleaned Assignment1.csv" file
